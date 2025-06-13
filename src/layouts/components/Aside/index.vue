@@ -133,6 +133,11 @@ function handleMenuCommand(command: string, item: ConversationItem<ChatSessionVo
       break;
   }
 }
+
+// 跳转到智能体页面
+function handleAgent() {
+  router.push({ name: 'agent' });
+}
 </script>
 
 <template>
@@ -162,6 +167,14 @@ function handleMenuCommand(command: string, item: ConversationItem<ChatSessionVo
             </el-icon>
             <span class="creat-chat-text">新对话</span>
             <SvgIcon name="ctrl+k" size="37" />
+          </div>
+        </div>
+        <div class="agent-btn-wrapper">
+          <div class="agent-btn" @click="handleAgent">
+            <el-icon class="agent-icon">
+              <UserFilled />
+            </el-icon>
+            <span class="agent-text">智能体</span>
           </div>
         </div>
 
@@ -287,6 +300,36 @@ function handleMenuCommand(command: string, item: ConversationItem<ChatSessionVo
             height: 24px;
             margin-left: auto;
             color: rgb(0 87 255 / 30%);
+          }
+        }
+      }
+      .agent-btn-wrapper {
+        padding: 0 12px;
+        .agent-btn {
+          display: flex;
+          gap: 6px;
+          align-items: center;
+          padding: 8px 6px;
+          margin-top: 6px;
+          margin-bottom: 6px;
+          color: #0057ff;
+          cursor: pointer;
+          user-select: none;
+          background-color: rgb(0 87 255 / 6%);
+          border: 1px solid rgb(0 102 255 / 15%);
+          border-radius: 12px;
+          &:hover {
+            background-color: rgb(0 87 255 / 12%);
+          }
+          .agent-text {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 22px;
+          }
+          .agent-icon {
+            width: 24px;
+            height: 24px;
+            font-size: 16px;
           }
         }
       }

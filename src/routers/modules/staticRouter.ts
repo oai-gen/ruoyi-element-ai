@@ -31,6 +31,15 @@ export const layoutRouter: RouteRecordRaw[] = [
           isDefaultChat: false,
         },
       },
+      {
+        path: '/agent',
+        name: 'agent',
+        component: () => import('@/pages/agent/index.vue'),
+        meta: {
+          title: '智能体',
+          icon: 'UserFilled',
+        },
+      },
     ],
   },
 ];
